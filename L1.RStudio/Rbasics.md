@@ -30,6 +30,7 @@ Searching the interwebs:
 In most cases, google what your are trying to perform and add R at the beginning, and you get get results.  There exist specific websites dedicated to R, and these below have been helpful in the pass
 
 [rseek](http://www.rseek.org/)
+
 [Stack Overflow](http://stackoverflow.com/questions/tagged/r)
 
 When all else fails:
@@ -110,6 +111,7 @@ If not careful, or if you consider yourself a lazy programmer, this can make you
 
 Styles promoted by Hadley Wickham, an idol in the R programming world, and Google (yes they are heavy R users):
 [Hadley's conventions](http://adv-r.had.co.nz/Style.html)
+
 [Google's conventions](https://google.github.io/styleguide/Rguide.xml)
 
 
