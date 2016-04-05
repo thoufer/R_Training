@@ -16,11 +16,10 @@ This training is intended to be series short (30 min or less) introductions to a
 2. Vectors, Arrays/Matricies
   * Numeric, character, bool
   * Names
-  * 
   * Referencing, indexes
 
 3. lists and Data frames
-  * Fucking factors
+  * Basic list and Data frame syntax 
   * if else and ifelse clauses
   * subset/filter data frames
   * Append additional rows or columns to a data frame
@@ -28,6 +27,12 @@ This training is intended to be series short (30 min or less) introductions to a
   * Sort
   * 'by group' processing
   * Frequncy tables (table, xtabs)
+
+5. Input/Output 
+  * Reading text files (Fixed Width, Delimited)
+  * Excel
+  * SAS Dataset (Foreign & sas7bdat pkgs)
+  * Connecting to databases (RODBC and friends)
 
 4. Exploratory Plotting
   * plot basics, scatter, lines, bars
@@ -37,12 +42,6 @@ This training is intended to be series short (30 min or less) introductions to a
   * Legends
   * Adding text in and outside of plotting region
   * Multiple graphs on a 'page'
-
-5. Input/Output 
-  * Reading text files (Fixed Width, Delimited)
-  * Excel
-  * SAS Dataset (Foreign & sas7bdat pkgs)
-  * Connecting to databases (RODBC and friends)
 
 ## Advanced R ##
 1. Everything is a function
