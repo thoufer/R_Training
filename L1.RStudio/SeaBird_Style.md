@@ -2,17 +2,7 @@
 
 <div id="main" class="aui-page-panel">
 
-<div id="main-header">
-
-<div id="breadcrumb-section">
-
-1.  <span>[Data lifecycle development for Migratory Bird surveys](index.html)</span>
-
-</div>
-
-# <span id="title-text">Data lifecycle development for Migratory Bird surveys : Coding standards & conventions for R</span>
-
-</div>
+# Data lifecycle development for Migratory Bird surveys : Coding standards & conventions for R
 
 <div id="content" class="view">
 
@@ -20,9 +10,7 @@
 
 <div id="main-content" class="wiki-content group">
 
-<div class="columnMacro" style="width:75%;min-width:75%;max-width:75%;">
-
-# <span style="color: rgb(51,51,153);">Background</span>
+## Background
 
 When moving into a collaborative space where where code maybe used, shared, and modified among the group it becomes increasingly important that there be an agreed upon set of rules for how that code is developed. These standards apply specifically to the layout and formatting of the source code, making them easier to read, verify, and maintain by all developers. There are no right or wrong coding standards only those which are agreed upon. The standards and conventions below are partly derived from historical convention used in other languages, partly from Google's R coding standards, and partly from a standard developed by Hadley Wickham.
 
@@ -34,7 +22,7 @@ For those that prefer to write "messy" or unformatted code I suggest looking at 
 
 There are many coding style in use today. Choosing a particular style is a trade off between readability, and additional hand movements during typing. The four primary styles in use in R are **SentenceCase**, and **camelCase, underscore_notation**, and **dot.notation.** SentenceCase and camelCase are the most efficient with respect to typing speed, as the shift key is easily reachable, however, some users find it difficult to read especially if an object or function name is more than tow words. Underscore_notation, and dot.notation tend to improve readability at the cost of typing speed, as they both require awkward hand movements to reach the _ and . key.
 
-# <span style="color: rgb(51,51,153);">Notation and Naming</span>
+# Notation and Naming
 
 ## _File Names_
 
