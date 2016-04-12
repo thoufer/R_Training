@@ -16,7 +16,7 @@ However, in practice, I find that I rarely create data frames by hand.  In just 
 
 Rather than manually creating a data.frame with lots of values, were going to use a dataset that comes baked into R.  The dataset contains information extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models; \[`?mtcars`\]). The dataset is loaded using
 
-``rconsole
+```rconsole
 > data(mtcars)
 ```
 If all went well, nothing happened, and you simply were returned to a commmand prompt. However, we can see that a new object exists in the workspace called mtcars using the `ls()` command. Simply issuing
@@ -160,7 +160,8 @@ Using pseudo code this task would be accomplished using;
 
 ```rconsole
 > merge(parts, state_code, by.x= 'state_code', by.y='state_code')
-``
+```
+
 The arguments by.x and by.y, specify those columns in which R will do the join on.  There can be more than one column specified, and their names do not need to be identical. 
 
 At this point we need to pause, and explain join operations. When joining 2 data frames, R can return 3 sets of data that might result from that operation.  We'll use the following image to explain these (from [http://www.dofactory.com/sql/join](http://www.dofactory.com/sql/join)]
@@ -171,7 +172,7 @@ This question appeared on [Stack Overflow](http://stackoverflow.com/questions/12
 
 Assume you have the 2 data frames below. How can the merge command be used to accomplish the above join types.
 
-```rconosole
+```rconsole
 df1 = data.frame(CustomerId = c(1:6), Product = c(rep("Toaster", 3), rep("Radio", 3)))
 df2 = data.frame(CustomerId = c(2, 4, 6), State = c(rep("Alabama", 2), rep("Ohio", 1)))
 
