@@ -164,7 +164,7 @@ Using pseudo code this task would be accomplished using;
 
 The arguments by.x and by.y, specify those columns in which R will do the join on.  There can be more than one column specified, and their names do not need to be identical. 
 
-At this point we need to pause, and explain join operations. When joining 2 data frames, R can return 3 sets of data that might result from that operation.  We'll use the following image to explain these (from [http://www.dofactory.com/sql/join](http://www.dofactory.com/sql/join)]
+At this point we need to pause, and explain join operations. When joining 2 data frames, R can return 3 sets of data that might result from that operation.  We'll use the following image to explain these (from [http://www.dofactory.com/sql/join](http://www.dofactory.com/sql/join))
 
 [![Join types](sql-joins.png)]
   
@@ -196,8 +196,11 @@ The various join types are accomplished by using optional arguments specified in
 **Inner join:** merge(df1, df2) will work for these examples because R automatically joins the frames by common variable names, but you would most likely want to specify merge(df1, df2, by = "CustomerId") to make sure that you were matching on only the fields you desired. You can also use the by.x and by.y parameters if the matching variables have different names in the different data frames.
 
 **full Outer join:** merge(x = df1, y = df2, by = "CustomerId", all = TRUE)
+
 **Left outer:** merge(x = df1, y = df2, by = "CustomerId", all.x = TRUE)
+
 **Right outer:** merge(x = df1, y = df2, by = "CustomerId", all.y = TRUE)
+
 **Cross join:** merge(x = df1, y = df2, by = NULL)
 
 The answer included a join type not shown in the image; the cross join.  The cross join, creates a data frame that contains all possible row combinations of the 2 data frames.
@@ -396,8 +399,26 @@ For me, this is the most straight forward way of subsetting data. However, if yo
 ```
 
 ## Frequency Tables
+On occassion we just want an understanding of the frequency of observations of a particular type within a data set. There are 2 functions that are .. `table()`, and `xtabs()`.  In the following example I want to know the number of vehicles of each cylinder type, and manufacturer evaluated by Motor Trend Magazine. Since the Car manufacturer is contained in the row name along with the model, it needs to be stripped out before we can calculate the frequencies.
 
 
-## Group operations
+```rconsole
+> data(mtcars)
+>  table(mtcars$cyl) # How many observations of each cylinder type
+>
+> # use advanced code to strip out manufacturer
+> split_names <- strsplit(rownames(mtcars),' ')  # split each string element where ever a space occurs
+> man <- sapply(split_names, function(lst){ lst[1]}, simplify=TRUE) # return just manufacturer, always first element.
+> mtcars2 <- cbind(mtcars, Manufac = man, stringsAsFactors = FALSE)
+> table(mtcars2$Manufac, mtcars2$cyl)
+```
+We can perform the an identical frequency using `xtabs()`.  The difference between the 2 is that xtabs uses a formula notation for specifying the desired output.
 
+```rconsole
+> xtabs(~ Manufac + cyl, data=mtcars2)
+```
+
+Just as an aside we will be covering the `strsplit()` which allows us to slice and dice character strings as needed, as well as the `sapply()` function which is an iteration function.
+
+These functions, in conjunction with other functions can be used to summarize data in interesting ways.  The best suggestion here is to look at, run, the examples in the help files for xtabs and table (`?xtabs` and `?table`)
 
